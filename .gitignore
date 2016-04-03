@@ -1,0 +1,5 @@
+/public/dist
+# Created by .ignore support plugin (hsz.mobi)
+/.tmp
+/node_modules
+/.idea
