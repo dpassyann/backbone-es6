@@ -1,6 +1,6 @@
 // Karma configuration
 // http://karma-runner.github.io/0.12/config/configuration-file.html
-var _ = require("lodash");
+var _ = require("lodash"); 
 
 module.exports = function(config) {
   "use strict";
