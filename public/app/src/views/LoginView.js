@@ -88,6 +88,7 @@ export default class LoginView extends Marionette.ItemView{
     connect(){
         if( this.model.getLogin() === "dpassyann" && this.model.get("password") === "deungoue" ){
             this.model.set("connected", true);
+            this.model.save();
         }
         console.log("this", this.model.toJSON());
     }
