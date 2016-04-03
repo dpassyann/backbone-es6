@@ -13,7 +13,10 @@ import * as sharedConstant from "../config/SharedUtils";
 import UserModel from "../models/UserModel";
 
 export default class HomeController extends Marionette.Controller {
-    
+    /**
+     * Méthode qu'expose mon controlleur pour réponde à un path donné
+     * (voir comment faire quand on a des request param dans la requête -- à voir dans la version 2)
+     */
     home() {
         console.log("I'm homeController");
 

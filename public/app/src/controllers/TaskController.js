@@ -5,10 +5,9 @@
 import Marionette from "backbone.marionette";
 
 export default class TaskController extends Marionette.Controller{
-    constructor(){
-        super();
-    }
-
+    /**
+     * Méthode qu'expose mon controlleur pour répondre à un path.
+     */
     tasks(){
         console.log("List all the tasks");
     }

@@ -6,12 +6,21 @@ import Backbone from "backbone";
 
 export default class UserModel extends Backbone.Model{
 
+    /***
+     * @override
+     * Je crée les attributs de mon model et je les initialise
+     */
     defaults(){
-        this.attributes.login = "yann";
-        this.attributes.password = "toto";
+        this.attributes.login = "YannDeunGoUe";
+        this.attributes.password = "TiTO";
         this.attributes.connected = false;
     }
 
+    /**
+     * @override
+     * contructeur de mon model où je cable les évènements que je vais écouter
+     * expl : j'écoute tout changement sur l'attribut 'login' de mon model
+     */
     initialize(){
         this.on("change:login", this.onChangeLogin);
     }
@@ -20,6 +29,12 @@ export default class UserModel extends Backbone.Model{
         console.log("login => ", this.attributes.login);
     }
 
+    /**
+     * @override
+     * Méthode de validation de mon model qui est appelé quand on fait un isValid
+     * @param attrs : tableau associatif des attributs de mon modèle
+     * @returns {Array} tableau d'erreurs
+     */
     validate(attrs){
         let errors = [];
 
@@ -40,6 +55,66 @@ export default class UserModel extends Backbone.Model{
             return errors;
         }
 
+    }
+
+    /**
+     * Un des avantage de ES6 c'est de pouvoir faire ce genre de truc
+     * Pour moi qui viens d'un monde Java ce setter me parle plus.
+     * @param login
+     */
+    setLogin(login){
+        this.set("login", login);
+    }
+
+    /**
+     * Pour les mêmes raisons que le setter : je trouve que ça peut rentrer dans les bonnes pratiques
+     * @returns {*}
+     */
+    getLogin(){
+        return this.get("login");
+    }
+
+    /**
+     * Cette méthode permet d'échapper un attribut -- je crois qu'elle prend des paramètres ... je regarderai dans l'API tout à l'heure :p
+     * il est aussi bien de l'utiliser pour éviter les injection de script à voir plus tard
+     */
+    escape(){
+
+    }
+
+    /**
+     * Méthode qui indique sur quel service REST est plugé ce model
+     * ici le chemin est relatif : si on est dans le même domaine que le serveur exposant l'API REST
+     * sinon on indique le chemin pleinement qualifié.
+     * @override
+     * @returns {string}
+     */
+    url(){
+        return "/user"
+    }
+
+    /**
+     * @override
+     * Methode qui fera un POST sur l'url '/user'
+     */
+    save(){
+        
+    }
+
+    /**
+     * @override
+     * PUT sur la l'url '/user'
+     */
+    update(){
+        
+    }
+
+    /**
+     * @override
+     * DELETE sur la l'url '/user'
+     */
+    delete(){
+        
     }
     
 }
