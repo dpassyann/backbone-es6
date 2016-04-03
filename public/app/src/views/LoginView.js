@@ -27,7 +27,7 @@ export default class LoginView extends Marionette.ItemView{
 
     events(){
         return {
-            "click @ui.button"              :"connect",
+            "click @ui.button"               :"connect",
             "change @ui.loginInputText"      :"onLoginChange",
             "change @ui.passwordInputText"   :"onPasswordChange"
         };

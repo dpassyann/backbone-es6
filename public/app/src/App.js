@@ -8,27 +8,25 @@ import Routes from "./Routes";
 import TaskController from "./controllers/TaskController";
 import HomeController from "./controllers/HomeController";
 
-let app = window.app = new Marionette.Application();
+export default class MyApp extends Marionette.Application{
 
-app.onStart = () => {
-    "use strict";
-    if (Backbone.history) {
-        Backbone.history.start();
+    start(){
+        if (Backbone.history) {
+            Backbone.history.start();
+        }
     }
-};
 
-app.addInitializer(function () {
-    var router =  new Routes();
-    //*
-    router.processAppRoutes(new HomeController(), {
-        "":"home"
-    });
-    router.processAppRoutes(new TaskController(), {
-        "task":"tasks"
-    });
-    //*/
-    console.log("hello from the addInitializer.");
-});
+    initialize(){
 
-app.start();
+        let router =  new Routes();
+        router.processAppRoutes(new HomeController(), {
+            "":"home"
+        });
+        router.processAppRoutes(new TaskController(), {
+            "task":"tasks"
+        });
+        console.log("hello from the addInitializer.");
+    }
+}
 
+new MyApp().start();
