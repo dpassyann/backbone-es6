@@ -74,7 +74,7 @@ export default class LoginView extends Marionette.ItemView{
      */
 
     className(){
-        return "login-center"
+        return "login-center";
     }
 
     onLoginChange(){

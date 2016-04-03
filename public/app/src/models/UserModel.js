@@ -76,7 +76,7 @@ export default class UserModel extends Backbone.Model{
 
     /**
      * Cette méthode permet d'échapper un attribut -- je crois qu'elle prend des paramètres ... je regarderai dans l'API tout à l'heure :p
-     * il est aussi bien de l'utiliser pour éviter les injection de script à voir plus tard
+     * il est aussi bien de l'utiliser pour éviter les injections de script à voir plus tard
      */
     escape(){
 
@@ -90,7 +90,7 @@ export default class UserModel extends Backbone.Model{
      * @returns {string}
      */
     url(){
-        return "/user"
+        return "/user";
     }
 
     /**
