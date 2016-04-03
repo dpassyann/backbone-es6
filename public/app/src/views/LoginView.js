@@ -15,7 +15,7 @@ export default class LoginView extends Marionette.ItemView{
      * @param options
      */
     /*
-    constructor(options){
+    constructor(options){ 
         super(options);
     }
     */
